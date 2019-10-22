@@ -2,12 +2,7 @@
 //hadware transistor: BC547, ir led: TSAL6100, ir reciever: TSOP4838
 
 IRsend irsend; //send pin = 13
-
-int RECV_PIN = 11;
-
-#define MAX_NAME_LENGTH  20
-
-IRrecv irrecv(RECV_PIN);
+IRrecv irrecv(11); //recieve pin = 11
 decode_results results;
 
 /*
@@ -71,17 +66,15 @@ decode_results results;
 
 
 
-void setup() {
+void setup() 
+{
 }
 
-void loop() {
-
+void loop() 
+{
     irsend.sendNEC(REMOTE_KEY_POWER, 32);
     delay(300);
 }
-
-
-
 /*
 void setup()
 {
@@ -90,18 +83,12 @@ void setup()
 }
 
 void loop() {
-  
-      Serial.println("asd");
   if (irrecv.decode(&results)) 
   {
-    if(results.value == REMOTE_KEY_MUTE)
-    {
-
-      Serial.println("Power");
-      irsend.sendNEC(REMOTE_KEY_POWER, 32);
-
-    }
+    Serial.println(results.value, HEX);
     irrecv.resume(); // Receive the next value
   }
-  delay(150);
-} */
+  delay(500);
+} 
+*/
+
