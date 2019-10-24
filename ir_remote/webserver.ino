@@ -3,7 +3,7 @@
  * 
  * hadware list:
  * controller: NodeMCU v1
- * transistor: BC547 
+ * transistor: BC547C
  * ir led: TSAL6100 
  * ir reciever: TSOP4838
  * 
